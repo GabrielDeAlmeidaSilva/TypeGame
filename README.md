@@ -1,2 +1,3 @@
 # TypeGame
-12345
+TESTE
+
