@@ -1,4 +1,68 @@
+/*Palheta de cor:
+	FFEA6C	amarelo
+	FFFBA7	amarelo claro
+	FFA6FB	rosa
+	FF61F8	roxo
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cabecalho {
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFEA6C;
+}
+
+#containerGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFBA7;
+}
+
+.divNavegacao ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 10px;
+}
+
+.iconNav {
+  width: 40px;
+  height: 40px; 
+}
+
 .iconImagem {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
+}
+
+.divBotoes {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.mainGame {
+  width: 500px;
+  height: 200px;
+  padding: 20px 50px 20px 20px;
+  margin: 10px;
+  border: 2px solid #000000;
+  background-color: #FFEA6C;
+  border-radius: 10px;
+}
+
+.divPalavras {
+  display: none;
+}
+
+.divPontuacao {
+  visibility: hidden;
 }
