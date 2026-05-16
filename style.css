@@ -1,8 +1,8 @@
 /*Palheta de cor:
-	FFEA6C	amarelo
-	FFFBA7	amarelo claro
-	FFA6FB	rosa
-	FF61F8	roxo
+	E4D329	amarelo
+	478B8D	azul marinho
+	294669	azul escuro
+	0D0B61	azul mais escuro
 */
 
 * {
@@ -10,37 +10,54 @@
   padding: 0;
 }
 
+.container {
+  background-color: #478B8D;
+}
+
 .cabecalho {
-  padding-bottom: 5px;
+  padding: 5px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #FFEA6C;
+  background-color: #E4D329;
+  font-family: "Consolas", Lucida Console, Arial;
+  font-size: 125%;
 }
 
 #containerGame {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFFBA7;
 }
 
 .divNavegacao ul{
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  margin: 10px;
+  margin-left: 100px;
 }
 
 .iconNav {
   width: 40px;
-  height: 40px; 
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .iconImagem {
   width: 60px;
   height: 60px;
+  margin-right: 10px;
+}
+
+.botao {
+  margin: 0 210px 5px 210px;
+  padding: 10px;
+  background-color: #478B8D;
+  border: 2px solid #294669;
+  border-radius: 15px;
+  font-family: "Lucida Console", Arial;
 }
 
 .divBotoes {
@@ -54,9 +71,9 @@
   height: 200px;
   padding: 20px 50px 20px 20px;
   margin: 10px;
-  border: 2px solid #000000;
-  background-color: #FFEA6C;
-  border-radius: 10px;
+  border: 10px solid #294669;
+  background-color: #0D0B61;
+  border-radius: 20px;
 }
 
 .divPalavras {

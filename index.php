@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <body>
+  <body class="container">
     <header>
       <div class="cabecalho">
         <img class="iconImagem" src="./assets/patoIcon.png" alt="" />
@@ -30,14 +30,14 @@
     </header>
     <div id="containerGame">
       <div class="divBotoes">
-        <button class="btnComecar">Começar</button>
-        <button class="btnReniciar">Reniciar</button>
+        <button class="botao" id="btnComecar">Começar</button>
+        <button class="botao" id="btnReniciar">Reniciar</button>
       </div>
       <main class="mainGame">
         <div class="divPalavras">
           Em, um, bom, e, verdadeiro, não, um, conjunto, escolar, eles, afirmam,
           que, a, alta, vida, considera, e, não, vem, o, que, também, para, o,
-          ponto, definido, pode, querer, como, enquanto
+          ponto, definido, pode, querer, como, enquanto, dorme, sentir, profundo
         </div>
       </main>
       <div class="divPontuacao">
