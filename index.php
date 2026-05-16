@@ -6,6 +6,7 @@
     <title>TypeGame</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <link rel="icon" href="assets/patoIcon.png">
   </head>
   <body class="container">
     <header>
@@ -22,17 +23,13 @@
               />
             </li>
             <li>
-              <img class="iconNav" src="./assets/coroa.png" alt="coroaIcon" />
+              <img class="iconNav" src="./assets/rankIcon.png" alt="rankIcon" />
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <div id="containerGame">
-      <div class="divBotoes">
-        <button class="botao" id="btnComecar">Começar</button>
-        <button class="botao" id="btnReniciar">Reniciar</button>
-      </div>
       <main class="mainGame">
         <div class="divPalavras">
           Em, um, bom, e, verdadeiro, não, um, conjunto, escolar, eles, afirmam,
@@ -41,8 +38,8 @@
         </div>
       </main>
       <div class="divPontuacao">
-        <h1>Pontuação:</h1>
-        <h2>100</h2>
+        <h1 class="indicPont">Pontuação:</h1>
+        <h2 id="pontuacao">100</h2>
       </div>
     </div>
   </body>
