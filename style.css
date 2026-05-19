@@ -1,68 +1,104 @@
 /*Palheta de cor:
-	FFEA6C	amarelo
-	FFFBA7	amarelo claro
-	FFA6FB	rosa
-	FF61F8	roxo
+	E4D329	amarelo
+	478B8D	azul marinho
+	294669	azul escuro
+	0D0B61	azul mais escuro
 */
+
+:root {
+  --font: "Roboto Mono", monospace;
+  --amarelo: #E4D329;
+  --azulMar: #478B8D;
+  --azulEsc: #294669;
+  --azulMEsc: #0D0B61;
+}
 
 * {
   margin: 0;
   padding: 0;
 }
 
+.container {
+  background-color: #478B8D;
+}
+
 .cabecalho {
-  padding-bottom: 5px;
+  padding: 5px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #FFEA6C;
+  background-color: #E4D329;
+  font-family: var(--font);
+  font-size: 125%;
 }
 
 #containerGame {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFFBA7;
+  margin: 20px;
+}
+
+.divNavegacao {
+  margin-left: auto;
 }
 
 .divNavegacao ul{
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   list-style-type: none;
-  margin: 10px;
 }
 
 .iconNav {
   width: 40px;
-  height: 40px; 
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 15px;
 }
 
 .iconImagem {
   width: 60px;
   height: 60px;
-}
-
-.divBotoes {
-  display: flex;
-  flex-direction: row;
-  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: auto;
 }
 
 .mainGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
   width: 500px;
   height: 200px;
   padding: 20px 50px 20px 20px;
-  margin: 10px;
-  border: 2px solid #000000;
-  background-color: #FFEA6C;
-  border-radius: 10px;
+  margin: 20px;
+  border: 10px solid #294669;
+  background-color: #0D0B61;
+  border-radius: 20px;
 }
 
 .divPalavras {
-  display: none;
+  font-family: var(--font);
+  font-size: 20px;
+  line-height: 1.5;
+  color: #ffffff;
+  visibility: visible;
+  text-align: justify;
+  text-align-last: center;
 }
 
 .divPontuacao {
-  visibility: hidden;
+  font-family: var(--font);
+  visibility: visible;
+}
+
+.indicPont {
+  font-size: 2em;
+  color: var(--azulEsc);
+}
+
+#pontuacao {
+  font-size: 4em;
+  color: var(--amarelo);
 }
