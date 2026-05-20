@@ -86,6 +86,7 @@
   visibility: visible;
   text-align: justify;
   text-align-last: center;
+  white-space: pre-wrap;
 }
 
 .divPontuacao {
