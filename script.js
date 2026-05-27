@@ -4,18 +4,18 @@ as palavras tem 5 caracteres e são simples sem acentos
 */
 
 const palavras = [
-  "pudim", "pingu", "pipos", "gatoo", "pavao", "zebra", "porco", "touro",
-  "peixe", "arara", "cisne", "bicho", "ursoo", "leoni", "tigre", "cobra",
-  "poney", "koala", "panda", "polvo", "sushi", "torta", "cacau", "melao",
-  "limao", "manga", "amora", "bacon", "balas", "doces", "papas", "creme",
-  "glace", "pizza", "nozes", "milho", "tampa", "balao", "pipca", "circo",
-  "magia", "palco", "festa", "danca", "canto", "jogos", "dados", "pista",
-  "bomba", "foguet", "astro", "terra", "marte", "venus", "rocha", "gruta",
-  "areia", "praia", "ondas", "lagoa", "navio", "barco", "balsa", "frota",
-  "carro", "aviao", "trenz", "motor", "rodaa", "pneus", "farol", "pista",
-  "risco", "traço", "linha", "bloco", "tijol", "gesso", "ferro", "metal",
-  "prata", "bronz", "perla", "rubii", "gemaa", "coroa", "trono", "reino",
-  "heroi", "capas", "lazer", "frias", "parqu", "praça", "campo", "grama"
+  "pudim", "penas", "pipos", "pato", "pavão", "zebra", "porco", "touro",
+  "peixe", "arara", "cisne", "ganso", "urso", "leão", "tigre", "cobra",
+  "bico", "coala", "panda", "polvo", "sushi", "torta", "cacau", "melão",
+  "limão", "manga", "amora", "frango", "ovo", "doces", "patas", "creme",
+  "glacial", "lagoa", "nozes", "milho", "tampa", "balão", "pão", "circo",
+  "magia", "palco", "festa", "dança", "canto", "jogos", "dados", "e",
+  "bomba", "dia", "noite", "terra", "água", "filhote", "rocha", "gruta",
+  "aveia", "praia", "ondas", "lagoa", "navio", "barco", "balsa", "frota",
+  "carro", "avião", "treze", "motor", "roda", "pneus", "farol", "pista",
+  "risco", "traço", "linha", "bloco", "tijolo", "gesso", "ferro", "metal",
+  "prata", "bronze", "com", "rubi", "gema", "coroa", "calmo", "reino",
+  "herói", "galho", "lazer", "semente", "parque", "praça", "campo", "grama"
 ];
 
 const sortea_frase = () => {
