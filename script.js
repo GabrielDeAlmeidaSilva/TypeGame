@@ -31,7 +31,7 @@ const sortea_frase = () => {
 //INICIO{VAR GLOBAL}
 const divPalavras = document.querySelector(".divPalavras");
 let posicao = -1;
-let pontuacao = 120;
+let pontuacao = document.querySelector('#pontuacao').innerHTML;
 //FIM{VAR GLOBAL}
 
 addEventListener("DOMContentLoaded",  (evento) => {
@@ -54,32 +54,27 @@ addEventListener("DOMContentLoaded",  (evento) => {
 });
 
 addEventListener("keydown", (evento) => {
+    document.querySelector('#timer').style.visibility = "visible";
 
-    //verificar se o jogo acabou
-    if(posicao>120){
-        return;
-    }
-
-    posicao++;
     const allspans = document.querySelectorAll(".span-frase");
     const pontu = document.querySelector("#pontuacao");
-
     let digitado = evento.key;
 
-    
+  if(digitado != 'Dead' && digitado != 'Shift'){
+    posicao++;
 
-    if((digitado >= 'a' && digitado <= 'z') || (digitado === ' ')){
-        
-        if(allspans[posicao].textContent === digitado){
-            allspans[posicao].style.backgroundColor = "green";
-        } else {
-            allspans[posicao].style.backgroundColor = "red";
-            pontuacao--;
-        }
-
-        if(posicao<120){
-            allspans[posicao+1].style.backgroundColor = "gray";
-        }
+    if(allspans[posicao].textContent === digitado){
+        allspans[posicao].style.backgroundColor = "green";
+    } else {
+        allspans[posicao].style.backgroundColor = "red";
+        pontuacao--;
     }
+  }
+    if(posicao < allspans.length){
+        allspans[posicao+1].style.backgroundColor = "gray";
+    }
+
     pontu.innerHTML = pontuacao;
 });
+
+
