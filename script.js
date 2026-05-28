@@ -4,18 +4,18 @@ as palavras tem 5 caracteres e são simples sem acentos
 */
 
 const palavras = [
-  "pudim", "pingu", "pipos", "gatoo", "pavao", "zebra", "porco", "touro",
-  "peixe", "arara", "cisne", "bicho", "ursoo", "leoni", "tigre", "cobra",
-  "poney", "koala", "panda", "polvo", "sushi", "torta", "cacau", "melao",
-  "limao", "manga", "amora", "bacon", "balas", "doces", "papas", "creme",
-  "glace", "pizza", "nozes", "milho", "tampa", "balao", "pipca", "circo",
-  "magia", "palco", "festa", "danca", "canto", "jogos", "dados", "pista",
-  "bomba", "foguet", "astro", "terra", "marte", "venus", "rocha", "gruta",
-  "areia", "praia", "ondas", "lagoa", "navio", "barco", "balsa", "frota",
-  "carro", "aviao", "trenz", "motor", "rodaa", "pneus", "farol", "pista",
-  "risco", "traço", "linha", "bloco", "tijol", "gesso", "ferro", "metal",
-  "prata", "bronz", "perla", "rubii", "gemaa", "coroa", "trono", "reino",
-  "heroi", "capas", "lazer", "frias", "parqu", "praça", "campo", "grama"
+  "pudim", "penas", "pipos", "pato", "pavão", "zebra", "porco", "touro",
+  "peixe", "arara", "cisne", "ganso", "urso", "leão", "tigre", "cobra",
+  "bico", "coala", "panda", "polvo", "sushi", "torta", "cacau", "melão",
+  "limão", "manga", "amora", "frango", "ovo", "doces", "patas", "creme",
+  "glacial", "lagoa", "nozes", "milho", "tampa", "balão", "pão", "circo",
+  "magia", "palco", "festa", "dança", "canto", "jogos", "dados", "e",
+  "bomba", "dia", "noite", "terra", "água", "filhote", "rocha", "gruta",
+  "aveia", "praia", "ondas", "lagoa", "navio", "barco", "balsa", "frota",
+  "carro", "avião", "treze", "motor", "roda", "pneus", "farol", "pista",
+  "risco", "traço", "linha", "bloco", "tijolo", "gesso", "ferro", "metal",
+  "prata", "bronze", "com", "rubi", "gema", "coroa", "calmo", "reino",
+  "herói", "galho", "lazer", "semente", "parque", "praça", "campo", "grama"
 ];
 
 const sortea_frase = () => {
@@ -31,7 +31,7 @@ const sortea_frase = () => {
 //INICIO{VAR GLOBAL}
 const divPalavras = document.querySelector(".divPalavras");
 let posicao = -1;
-let pontuacao = 120;
+let pontuacao = document.querySelector('#pontuacao').innerHTML;
 //FIM{VAR GLOBAL}
 
 addEventListener("DOMContentLoaded",  (evento) => {
@@ -54,32 +54,27 @@ addEventListener("DOMContentLoaded",  (evento) => {
 });
 
 addEventListener("keydown", (evento) => {
+    document.querySelector('#timer').style.visibility = "visible";
 
-    //verificar se o jogo acabou
-    if(posicao>120){
-        return;
-    }
-
-    posicao++;
     const allspans = document.querySelectorAll(".span-frase");
     const pontu = document.querySelector("#pontuacao");
-
     let digitado = evento.key;
 
-    
+  if(digitado != 'Dead' && digitado != 'Shift'){
+    posicao++;
 
-    if((digitado >= 'a' && digitado <= 'z') || (digitado === ' ')){
-        
-        if(allspans[posicao].textContent === digitado){
-            allspans[posicao].style.backgroundColor = "green";
-        } else {
-            allspans[posicao].style.backgroundColor = "red";
-            pontuacao--;
-        }
-
-        if(posicao<120){
-            allspans[posicao+1].style.backgroundColor = "gray";
-        }
+    if(allspans[posicao].textContent === digitado){
+        allspans[posicao].style.backgroundColor = "green";
+    } else {
+        allspans[posicao].style.backgroundColor = "red";
+        pontuacao--;
     }
+  }
+    if(posicao < allspans.length){
+        allspans[posicao+1].style.backgroundColor = "gray";
+    }
+
     pontu.innerHTML = pontuacao;
 });
+
+

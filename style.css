@@ -37,7 +37,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 20px 28vw 0 28vw;
+}
+
+#timer{
+  font-family: var(--font);
+  font-size: 4em;
+  color: var(--amarelo);
+  align-self: flex-end;
+  visibility: hidden;
+}
+
+#indicSeg {
+  color: var(--azulEsc);
 }
 
 .divNavegacao {
@@ -69,13 +81,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  width: 500px;
+  width: 44vw;
   height: 200px;
   padding: 20px 50px 20px 20px;
-  margin: 20px;
+  margin: 10px 0 10px 0;
   border: 10px solid #294669;
   background-color: #0D0B61;
   border-radius: 20px;
+  box-sizing: border-box;
 }
 
 .divPalavras {
@@ -91,7 +104,8 @@
 
 .divPontuacao {
   font-family: var(--font);
-  visibility: visible;
+  visibility: hidden;
+  align-self: flex-start;
 }
 
 .indicPont {
