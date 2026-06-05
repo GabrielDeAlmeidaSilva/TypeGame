@@ -63,6 +63,8 @@ addEventListener("keydown", (evento) => {
   if(digitado != 'Dead' && digitado != 'Shift'){
     posicao++;
 
+    console.log(`digitado: ${digitado}`);
+
     if(allspans[posicao].textContent === digitado){
         allspans[posicao].style.backgroundColor = "green";
     } else {
