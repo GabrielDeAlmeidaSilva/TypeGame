@@ -6,35 +6,39 @@
     <title>TypeGame</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <link rel="icon" href="assets/patoIcon.png">
+    <link rel="icon" href="assets/patoIcon.png" />
   </head>
   <body class="container">
-    <header>
-      <div class="cabecalho">
-        <img class="iconImagem" src="./assets/patoIcon.png" alt="" />
-        <h1>TypeGame</h1>
-        <nav class="divNavegacao">
-          <ul>
-            <li>
-              <img class="iconNav" src="./assets/rankIcon.png" alt="rankIcon" />
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div id="containerGame">
-      <div id="timer"><span id="countdown">30</span><span id="indicSeg">s</span></div>
-      <main class="mainGame">
-        <div class="divPalavras">
-          Em, um, bom, e, verdadeiro, não, um, conjunto, escolar, eles, afirmam,
-          que, a, alta, vida, considera, e, não, vem, o, que, também, para, o,
-          ponto, definido, pode, querer, como, enquanto, dorme, sentir, profundo
+    <main>
+      <header>
+        <div class="cabecalho">
+          <img class="iconImagem" src="./assets/patoIcon.png" alt="" />
+          <h1>TypeGame</h1>
+          <nav class="divNavegacao">
+            <ul>
+              <li>
+                <img
+                  class="iconNav"
+                  src="./assets/rankIcon.png"
+                  alt="rankIcon"
+                />
+              </li>
+            </ul>
+          </nav>
         </div>
-      </main>
-      <div class="divPontuacao">
-        <h1 class="indicPont">Pontuação:</h1>
-        <h2 id="pontuacao">100</h2>
+      </header>
+      <div class="containerInfos">
+        <div class="info">30</div>
+        <div class="botoes">
+          <button class="btnComecar">Restart Game</button>
+        </div>
       </div>
-    </div>
+
+      <div class="jogo" tabindex="0">
+        <div class="DivPalavras"></div>
+        <div class="cursor"></div>
+        <div class="focus-erro">Click aqui para começar</div>
+      </div>
+    </main>
   </body>
 </html>
