@@ -1,0 +1,41 @@
+:root {
+  --font: "Roboto Mono", monospace;
+  --amarelo: #e4d329;
+  --azulMar: #478b8d;
+  --azulEsc: #294669;
+  --azulMEsc: #0d0b61;
+}
+
+* {
+    width: 0;
+    height: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#ligas {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--azulMEsc); 
+}
+
+.imgLateral {
+    width: 30vw;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 100vh;
+}
+
+.leaderBoard {
+    width: 100%;
+    height: 40px;
+    border: solid black 1px;
+}
