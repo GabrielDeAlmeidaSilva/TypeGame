@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+
 :root {
   --font: "Roboto Mono", monospace;
   --amarelo: #e4d329;
@@ -19,7 +21,7 @@
     flex-direction: row;
     width: 100vw;
     height: 100vh;
-    background-color: var(--azulMEsc); 
+    background-color: var(--azulEsc); 
 }
 
 .imgLateral {
@@ -27,15 +29,66 @@
     height: 100vh;
 }
 
+.btn {
+    width: 20px;
+    height: 20px;
+}
+
 .main {
+    font-family: var(--font);
     display: flex;
     flex-direction: column;
     width: 40vw;
-    height: 100vh;
+    height: 80vh;
+    background-color: var(--azulMar);
+    margin: 40px;
+    border-radius: 10px;
 }
 
 .leaderBoard {
     width: 100%;
-    height: 40px;
+    flex-grow: 1;
     border: solid black 1px;
+}
+
+#header {
+    position: sticky;
+}
+
+#rank {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.player {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.atribPlayer {
+    
+}
+
+.pos {
+
+}
+
+.avatar {
+       
+}
+
+.nomePlayer {
+    
+}
+
+.pontuacao {
+      
 }
