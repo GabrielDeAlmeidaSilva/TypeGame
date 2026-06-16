@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width", initial-scale=1">
@@ -8,28 +8,20 @@
     <link rel="stylesheet" href="styleLiga.css">    
 </head>
 <body>
-    <div id="ligas">
-        <div class="imgLateral">
-	    <img class="btn" src="assets/arrow.png" alt="voltar">
-	</div>
-        <div class="main">
-	    <div class="leaderBoard" id="header">
-	        <div class="nomeLiga"> <h1> Lagoa Tranquila </h1> </div>
+    <div id="ahh">
+        <div id="header">
+	    <img id="pato" src="./assets/patoIcon.png" alt="Retornar ao jogo">
+	    <div id="entrar">
+		<form class="formulario">
+		    <input type="text" id="nomeLiga" name="nomeLiga">
+		    <label for="nomeLiga"> Liga </label>
+		    <input type="text" id="codLiga" name="codLiga">
+		    <label for="codLiga"> Código </label>
+		    <button type="button"> Entrar </button>
+		</form>
 	    </div>
-	    <div class="leaderBoard" id="rank">
-		<div id="p1" class="player"> 
-                    <p class="atribPlayer pos" id="pos1"> 1 </p>
-		    <img class="atribPlayer avatar" id="avtTeste" alt="Teste"> 
-		    <p class="atribPlayer nomePlayer" id="nomeTeste"> Teste </p>
-		    <p class="atribPlayer pontuacao" id="pontTeste"> 0 </p>
-		</div>
-	    </div>
-	    <div class="leaderBoard" id="footer">
-		<div class="btnLeaderboard"> Criar liga </div>
-		<div class="btnLeaderboard"> Entrar em uma liga </div>
-	    </div> 
+   	    <button type="button"> Criar liga </button>
 	</div>
-        <div class="imgLateral"></div>
     </div>
 </body>
 </html>

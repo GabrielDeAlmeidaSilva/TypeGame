@@ -16,79 +16,54 @@
 }
 
 
-#ligas {
-    display: flex;
-    flex-direction: row;
+#ahh {
+    display: grid;
     width: 100vw;
     height: 100vh;
     background-color: var(--azulEsc); 
 }
 
-.imgLateral {
-    width: 30vw;
-    height: 100vh;
-}
-
-.btn {
-    width: 20px;
-    height: 20px;
-}
-
-.main {
-    font-family: var(--font);
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 80vh;
-    background-color: var(--azulMar);
-    margin: 40px;
-    border-radius: 10px;
-}
-
-.leaderBoard {
-    width: 100%;
-    flex-grow: 1;
-    border: solid black 1px;
-}
-
 #header {
-    position: sticky;
-}
-
-#rank {
-    flex-grow: 3;
-    display: flex;
-    flex-direction: column;
-}
-
-.player {
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    width: 100vw;
+    height: 4rem;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--amarelo);
+}
+
+#pato {
+    width: 4rem;
+    height: 4rem;
+}
+
+#entrar {
+    display: flex;
+    flex-direction: row;
+    width: 30rem; 
+    height: 3rem;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-.atribPlayer {
-    
+input {
+    width: 6rem;
+    height: 2rem;
 }
 
-.pos {
-
+label {
+    display: block;
 }
 
-.avatar {
-       
-}
-
-.nomePlayer {
-    
-}
-
-.pontuacao {
-      
+#header button {
+    width: 6rem;
+    height: 2rem;
 }
