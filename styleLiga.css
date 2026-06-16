@@ -9,18 +9,19 @@
 }
 
 * {
-    width: 0;
-    height: 0;
+    padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 
 #ahh {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color: var(--azulEsc); 
+    font-family: var(--font);
+    align-items: center;
 }
 
 #header {
@@ -31,11 +32,26 @@
     gap: 10px;
     align-items: center;
     background-color: var(--amarelo);
+    font-family: var(--font);
 }
 
 #pato {
     width: 4rem;
     height: 4rem;
+    margin: 0 10px;
+}
+
+#titulo {
+    display: flex;
+    flex-direction: row;
+    padding: 0 2.5rem 0 1rem;
+    align-items: center;
+}
+
+#titulo h2 {
+    width: 10rem;
+    height: 4rem;
+    font-size: 3.5rem;
 }
 
 #entrar {
@@ -54,9 +70,10 @@
     gap: 10px;
 }
 
-input {
+#header input {
     width: 6rem;
     height: 2rem;
+    font-size: 1.5rem;
 }
 
 label {
@@ -66,4 +83,21 @@ label {
 #header button {
     width: 6rem;
     height: 2rem;
+    font-size: 1.5rem;
+}
+
+#ligaAtual {
+    font-size: 3rem;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+.leaderboard {
+    background-color: var(--azulMar);
+}
+
+#ligasAtivas {
 }
