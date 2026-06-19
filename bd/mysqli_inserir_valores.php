@@ -7,8 +7,8 @@ if (!$conn) {
     die("Erro de conexao: " . mysqli_connect_error());
 }
 
-$senhaPadrao = md5('123mudar');
-$senhaRyu = md5('hadouken');
+$senhaPadrao = password_hash('123mudar', PASSWORD_DEFAULT);
+$senhaRyu = password_hash('hadouken', PASSWORD_DEFAULT);
 
 $inserirUsuario = "INSERT INTO Usuario (idUsuario, nome, senha) VALUES
     (1, 'jogador1', '$senhaPadrao'), 
