@@ -2,5 +2,5 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = 'EduGL2812*';
+$password = '';
 $dbname = 'typegame';
