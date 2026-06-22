@@ -24,7 +24,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width", initial-scale=1">
     <title> TypeGame </title>
-    <link rel="icon" type="image/x-icon" href="assets/patoIcon.png">
+    <link rel="icon" type="image/x-icon" href="assets/patoIconCor.png">
     <link rel="stylesheet" href="styleLiga.css">    
     <script src="./scriptLiga.js" defer></script>
 </head>
@@ -88,10 +88,11 @@
 			echo "<h3>Quack</h3>";
 		    }
 		    else {
-			$getPlayers = "SELECT U.nome, P.pontuacao FROM Usuario U, Partida P, Liga L, UsuarioLiga UL WHERE P.fk_idUsuario = U.idUsuario AND UL.fk_idUsuario = U.idUsuario AND UL.fk_idLiga = " . $idLigaAtual . " GROUP BY U.nome, P.pontuacao ORDER BY P.pontuacao DESC;";
+			    //junta as tuplas em grupos do mesmo idUsuario e retornam apenas a maior pontuacao de cada grupo(a maior pontuacao do usuario em especifico). A propria marcacao da tag <ol> ja mostra a posicao dos jogadores, pois ja estao ordenados.
+			$getPlayers = "SELECT U.nome, MAX(P.pontuacao) AS MaiorPont FROM Usuario U, Partida P, Liga L, UsuarioLiga UL WHERE U.idUsuario = P.fk_idUsuario AND UL.fk_idUsuario = U.idUsuario AND UL.fk_idLiga = L.idLiga AND L.idLiga = " . $idLigaAtual . " AND P.dataPartida >= CURRENT_DATE - INTERVAL 7 DAY AND P.dataPartida <= CURRENT_DATE + INTERVAL 1 DAY GROUP BY U.idUsuario, U.nome ORDER BY MaiorPont DESC;";
 			$players = mysqli_query($conn, $getPlayers);
 			while($linhaPlyr = mysqli_fetch_assoc($players)){
-			    echo "<li><span class='nome'>" . $linhaPlyr['nome'] . "</span><span class='pont'>" . $linhaPlyr['pontuacao'] . "</span></li>";
+			    echo "<li><span class='nome'>" . $linhaPlyr['nome'] . "</span><span class='pont'>" . $linhaPlyr['MaiorPont'] . "</span></li>";
 			}
 		    }
 		?> 
@@ -100,10 +101,18 @@
         <div id="geral" class="leaderboard">
 	    <h2> Geral </h2>
 	    <ol>
-	        <li id="p1" class="player">
-	        <div id="pTeste" class="pNome"> Teste </div>
-	        <div id="pont1" class="pont"> 0 </div>
-	        </li>
+    		<?php
+		    if(!$idLigaAtual){
+			echo "<h3>Quack</h3>";
+		    }
+		    else {
+			$getPlayers = "SELECT U.nome, MAX(P.pontuacao) AS MaiorPont FROM Usuario U, Partida P, Liga L, UsuarioLiga UL WHERE U.idUsuario = P.fk_idUsuario AND UL.fk_idUsuario = U.idUsuario AND UL.fk_idLiga = L.idLiga AND L.idLiga = " . $idLigaAtual . " GROUP BY idUsuario ORDER BY MaiorPont DESC;";
+			$players = mysqli_query($conn, $getPlayers);
+			while($linhaPlyr = mysqli_fetch_assoc($players)){
+			    echo "<li><span class='nome'>" . $linhaPlyr['nome'] . "</span><span class='pont'>" . $linhaPlyr['MaiorPont'] . "</span></li>";
+			}
+		    }
+		?> 
 	    </ol>
 	</div>
 
