@@ -22,10 +22,12 @@ if (!mysqli_query($conn, $inserirUsuario)) {
     die("Erro ao inserir valores em Usuario" . mysqli_error($conn));
 }
 
+$senhaPadraoLiga = password_hash('123mudar', PASSWORD_DEFAULT);
+
 $inserirLiga = "INSERT INTO Liga (idLiga, nome, codigo, fk_idUsuario) VALUES
-    (1, 'Ouro', 'OURO01', 1),
-    (2, 'Prata', 'PRATA02', 2),
-    (3, 'Street', 'street6',100);
+    (1, 'Ouro', '$senhaPadraoLiga', 1),
+    (2, 'Prata', '$senhaPadraoLiga', 2),
+    (3, 'Street', '$senhaPadraoLiga',100);
 ";
 
 if (!mysqli_query($conn, $inserirLiga)) {
