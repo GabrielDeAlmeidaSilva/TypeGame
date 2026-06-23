@@ -75,7 +75,7 @@
 			}
 		    }    
 		?>
-		<a href="rankGlobal.html">
+		<a href="rankGlobal.php">
 		    <img id="globo" src="./assets/globo.png" alt="Rank global">
 	        </a>
 	    </div>

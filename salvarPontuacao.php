@@ -18,7 +18,7 @@ if(!$conn){
     }
     
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_POST['pontos'])) {
     $pontuacao =$_POST['pontos'];
@@ -26,7 +26,7 @@ if (isset($_POST['pontos'])) {
     die("Pontuação não informada.");
 }
 
-$stmt = mysqli_prepare($conn, "INSERT INTO Partida (pontuacao, fk_idUsuario) VALUES (?,?)");
+$stmt = mysqli_prepare($conn, "INSERT INTO Partida (pontuacao, fk_idUsuario, dataPartida) VALUES (?,?, CURRENT_TIMESTAMP)");
 mysqli_stmt_bind_param($stmt, "ii", $pontuacao, $idUser);
 
 if(mysqli_stmt_execute($stmt)) {
