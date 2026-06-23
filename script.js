@@ -67,6 +67,8 @@ function novoJogo() {
   // Adiciona a classe "atual" apenas para o ponto de partida do jogador
   if (primeiraPalavra) addClass(primeiraPalavra, "atual");
   if (primeiraLetra) addClass(primeiraLetra, "atual");
+
+  document.querySelector(".jogo").focus();
 }
 function getPontuacao() {
   //seleciona todas as palavras
@@ -83,14 +85,29 @@ function getPontuacao() {
 function fimJogo() {
   clearInterval(window.timer);
   addClass(document.querySelector(".jogo"), "fim");
+  let pontuacaoFinal = getPontuacao();
 
-  document.querySelector(".info").innerHTML =
-    `palavras por minutos: ${getPontuacao()}`;
+  const dados = new FormData();
+  dados.append("pontos", pontuacaoFinal);
+
+  fetch("salvarPontuacao.php", {
+    method: "POST",
+    body: dados,
+  })
+    .then((resposta) => resposta.text())
+    .then(() => {
+      console.log("Resposta do servidor:");
+      window.location.reload();
+    })
+    .catch(() => {
+      console.error("Erro de requisição:");
+    });
 }
 
 const divJogo = document.querySelector(".jogo");
 //deixa a div 'focavel' para escrever
 divJogo.focus();
+
 divJogo.addEventListener("keydown", (evento) => {
   //o .key serve para que do evento keyup, a const tecla pegue so o valor da tecla
 
@@ -181,6 +198,8 @@ divJogo.addEventListener("keydown", (evento) => {
   }
 
   if (ehBackSpace) {
+    evento.preventDefault();
+
     //volta a palavra anterior e para a ultima letra
     if (letraAtual && ehPrimeiraLetra) {
       if (palavraAtual.previousSibling) {
