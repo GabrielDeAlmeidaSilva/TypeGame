@@ -69,7 +69,7 @@ main {
 .containerInfos {
   margin: 20px 6px 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .info {
