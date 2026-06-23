@@ -21,8 +21,8 @@ if (!mysqli_query($conn, $sqlUsuario)) {
 //Liga
 $sqlLiga = "CREATE TABLE IF NOT EXISTS Liga (
     idLiga INTEGER UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL,
-    codigo VARCHAR(15) NOT NULL UNIQUE,
+    nome VARCHAR(50) NOT NULL UNIQUE,
+    codigo VARCHAR(255) NOT NULL,
     fk_idUsuario INTEGER UNSIGNED,
     FOREIGN KEY(fk_idUsuario) REFERENCES Usuario(idUsuario)
 );";
