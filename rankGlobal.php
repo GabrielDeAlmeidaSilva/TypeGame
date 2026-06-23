@@ -23,13 +23,13 @@
     <meta name="viewport" content="width=device-width", initial-scale=1">
     <title> TypeGame </title>
     <link rel="icon" type="image/x-icon" href="assets/patoIconCor.png">
-    <link rel="stylesheet" href="styleLiga.css">    
+    <link rel="stylesheet" href="styleLigas.css">    
     <script src="./scriptLiga.js" defer></script>
 </head>
 <body>
     <div id="ahh">
         <div id="header">
-            <a href="index.html">
+            <a href="index.php">
 	        <img id="pato" src="./assets/patoIcon.png" alt="Retornar ao jogo">
 	    </a>
 	    <div id="titulo">
