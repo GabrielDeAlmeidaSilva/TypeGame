@@ -66,7 +66,7 @@ else {
     if ($stmt->execute()) {
         $mensagem = "Liga criada com sucesso!";
         // Redireciona após sucesso na criação
-        header("Location: ligas.php");
+        header("Location: ../ligas/ligas.php");
         exit;
     } else {
         $mensagem = "Erro ao criar liga.";
