@@ -1,0 +1,74 @@
+.containerLiga {
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.containerLiga label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.containerLiga input {
+    background-color: #d9d9d9;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 20px;
+
+    font-size: 1rem;
+}
+
+.botoesLiga {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.botoesLiga button {
+    background-color: #58af9c;
+
+    width: 130px;
+    height: 40px;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 10px 30px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botoesLiga button:hover {
+    opacity: 0.9;
+}
+
+.tituloLiga {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--amarelo);
+    margin-bottom: 30px;
+}
+
+.cabecalhoLiga {
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.logoLiga {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.mensagemErro {
+      color: #ff6b6b;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
