@@ -82,7 +82,7 @@ $atualPontuacao = $linha['pontuacao'] ?? 0;
         <div class="info">Record: <?="$maiorPontuacao";?></div>
         <div class="info">ultimo Jogo: <?="$atualPontuacao";?></div>
         <div class="botoes">
-          <button class="btnComecar">Restart Game</button>
+          <button class="btnComecar" id = "btnResetar">Restart Game</button>
         </div>
       </div>
 
