@@ -6,17 +6,11 @@ const palavras =
     " ",
   );
 const numeroPalavras = palavras.length;
-window.timer = null;
+
+let timer = null;
+let gameStart = null;
+
 const gametime = 30 * 1000;
-
-//funcoes que mundam a classe da letra durante a digitacao
-function addClass(elemento, nome) {
-  elemento.classList.add(nome);
-}
-
-function removeClass(elemento, nome) {
-  elemento.classList.remove(nome);
-}
 
 //essa funcao tem a tarefa de retornar um elemento da array de palavras
 function palavraRandom() {
@@ -49,12 +43,12 @@ function montarTexto() {
 }
 
 function novoJogo() {
-  clearInterval(window.timer);
-  window.timer = null;
+  clearInterval(timer);
+  timer = null;
 
   document.querySelector(".info").innerHTML = gametime / 1000;
 
-  removeClass(document.querySelector(".jogo"), "fim");
+  document.querySelector(".jogo").classList.remove("fim");
 
   //coloca o texto dentro da divPalavras
   const divPalavras = document.querySelector(".DivPalavras");
@@ -65,11 +59,12 @@ function novoJogo() {
   const primeiraLetra = document.querySelector(".letra");
 
   // Adiciona a classe "atual" apenas para o ponto de partida do jogador
-  if (primeiraPalavra) addClass(primeiraPalavra, "atual");
-  if (primeiraLetra) addClass(primeiraLetra, "atual");
+  if (primeiraPalavra) primeiraPalavra.classList.add("atual");
+  if (primeiraLetra) primeiraLetra.classList.add("atual");
 
   document.querySelector(".jogo").focus();
 }
+
 function getPontuacao() {
   //seleciona todas as palavras
   const palavras = document.querySelectorAll(".palavra");
@@ -83,8 +78,8 @@ function getPontuacao() {
 }
 
 function fimJogo() {
-  clearInterval(window.timer);
-  addClass(document.querySelector(".jogo"), "fim");
+  clearInterval(timer);
+  document.querySelector(".jogo").classList.add("fim");
   let pontuacaoFinal = getPontuacao();
 
   const dados = new FormData();
@@ -128,17 +123,15 @@ divJogo.addEventListener("keydown", (evento) => {
   console.log({ key, expectativa });
 
   //comeca quando digitar a primeira letra
-  if (!window.timer && (ehLetra || ehSpaco)) {
+  if (!timer && (ehLetra || ehSpaco)) {
     const infoElement = document.querySelector(".info"); // Cache do elemento DOM
     const tempoTotalSegundos = gametime / 1000;
 
-    window.gameStart = Date.now(); // Define o início
+    gameStart = Date.now(); // Define o início
 
     //executa esta funcao a cada intervalo de tempo. 1segundo
-    window.timer = setInterval(() => {
-      const segundosPassados = Math.floor(
-        (Date.now() - window.gameStart) / 1000,
-      );
+    timer = setInterval(() => {
+      const segundosPassados = Math.floor((Date.now() - gameStart) / 1000);
       const tempoRestante = Math.max(0, tempoTotalSegundos - segundosPassados);
 
       infoElement.innerHTML = tempoRestante;
@@ -152,13 +145,13 @@ divJogo.addEventListener("keydown", (evento) => {
   if (ehLetra) {
     //as funcoes funcionam de forma sincrona
     if (letraAtual) {
-      addClass(letraAtual, key === expectativa ? "certo" : "errado"); //operador ternario que define se a letra digitada eh igual a esperada
-      removeClass(letraAtual, "atual");
+      letraAtual.classList.add(key === expectativa ? "certo" : "errado"); //operador ternario que define se a letra digitada eh igual a esperada
+      letraAtual.classList.remove("atual");
 
       //.nextSibling serve para passar para o proximo elemento de mesmo nivel no doom
       //verifica se tem uma letra depois
       if (letraAtual.nextSibling) {
-        addClass(letraAtual.nextSibling, "atual");
+        letraAtual.nextSibling.classList.add("atual");
       } else if (!palavraAtual.nextSibling) {
         //terminao o jogo se nao tiver mais palavras
         fimJogo();
@@ -187,13 +180,13 @@ divJogo.addEventListener("keydown", (evento) => {
       });
     }
     //move para a proxima palavra
-    removeClass(palavraAtual, "atual");
-    addClass(palavraAtual.nextSibling, "atual");
+    palavraAtual.classList.remove("atual");
+    palavraAtual.nextSibling.classList.add("atual");
     if (letraAtual) {
-      removeClass(letraAtual, "atual");
+      letraAtual.classList.remove("atual");
     }
     //.nextSibling serve para passar para o proximo elemento de mesmo nivel no doom
-    addClass(palavraAtual.nextSibling.firstChild, "atual");
+    palavraAtual.nextSibling.firstChild.classList.add("atual");
   }
 
   if (ehBackSpace) {
@@ -202,30 +195,30 @@ divJogo.addEventListener("keydown", (evento) => {
     //volta a palavra anterior e para a ultima letra
     if (letraAtual && ehPrimeiraLetra) {
       if (palavraAtual.previousSibling) {
-        removeClass(palavraAtual, "atual");
-        addClass(palavraAtual.previousSibling, "atual");
-        removeClass(letraAtual, "atual");
+        palavraAtual.classList.remove("atual");
+        palavraAtual.previousSibling.classList.add("atual");
+        letraAtual.classList.remove("atual");
 
         const ultimaLetraPalavraAnterior =
           palavraAtual.previousSibling.lastChild;
-        addClass(ultimaLetraPalavraAnterior, "atual");
-        removeClass(ultimaLetraPalavraAnterior, "errado");
-        removeClass(ultimaLetraPalavraAnterior, "certo");
+        ultimaLetraPalavraAnterior.classList.add("atual");
+        ultimaLetraPalavraAnterior.classList.remove("errado");
+        ultimaLetraPalavraAnterior.classList.remove("certo");
       }
     }
     if (letraAtual && !ehPrimeiraLetra) {
       //volta a letra da mesma palavra
-      removeClass(letraAtual, "atual");
-      addClass(letraAtual.previousSibling, "atual");
-      removeClass(letraAtual.previousSibling, "errado");
-      removeClass(letraAtual.previousSibling, "certo");
+      letraAtual.classList.remove("atual");
+      letraAtual.previousSibling.classList.add("atual");
+      letraAtual.previousSibling.classList.remove("errado");
+      letraAtual.previousSibling.classList.remove("certo");
     }
     if (!letraAtual) {
       //volta da posicao de espaco
       const ultimaLetra = palavraAtual.lastChild;
-      addClass(ultimaLetra, "atual");
-      removeClass(ultimaLetra, "errado");
-      removeClass(ultimaLetra, "certo");
+      ultimaLetra.classList.add("atual");
+      ultimaLetra.classList.remove("errado");
+      ultimaLetra.classList.remove("certo");
     }
   }
 });

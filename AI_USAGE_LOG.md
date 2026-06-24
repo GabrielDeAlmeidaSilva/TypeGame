@@ -54,7 +54,7 @@
 - **Análise e Aplicação:**
   primeiro eu testei o .focus(); na minha divJogo, mas acabou não funcionando. Depois de um tempo com a ia insistindo que o problema era o jeito que eu usava o foco, ela sugeriu usar o .preventDefault(); dentra da parte que verifica backspace, e essa soluçao acabou funcionando.
 - **Referência no Código:**
-  o .focus() no codigo e o .preventDefault(); dentro do codigo.
+  a mecanica de .focus() no codigo e o .preventDefault(); dentro do codigo.
 
 ### Interação 4
 

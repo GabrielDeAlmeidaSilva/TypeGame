@@ -3,6 +3,7 @@ require "./bd/credenciais.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+    $_SESSION["idUsuario"] = 1;
 }
 
 if (isset($_SESSION["idUsuario"])) {
@@ -30,7 +31,7 @@ mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 $linha = mysqli_fetch_assoc($resultado);
 
-$maiorPontuacao = $linha['pontuacao'];
+$maiorPontuacao = $linha['pontuacao'] ?? 0;
 
 $stmt = mysqli_prepare($conn,"SELECT pontuacao FROM Partida WHERE fk_idUsuario = ? ORDER BY idPartida DESC LIMIT 1");
 
@@ -40,7 +41,7 @@ mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 $linha = mysqli_fetch_assoc($resultado);
 
-$atualPontuacao = $linha['pontuacao'];
+$atualPontuacao = $linha['pontuacao'] ?? 0;
 ?>
 <!doctype html>
 <html lang="pt-br">
