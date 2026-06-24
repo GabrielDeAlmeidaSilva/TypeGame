@@ -57,6 +57,9 @@ $atualPontuacao = $linha['pontuacao'] ?? 0;
     <main>
       <header>
         <div class="cabecalho">
+          <div class ="botoes">
+            <button class= "btnComecar" id = "btnSair">Logout</button>
+          </div>
           <img class="iconImagem" src="./assets/patoIcon.png" alt="" />
           <h1>TypeGame</h1>
           <nav class="divNavegacao">

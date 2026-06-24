@@ -226,3 +226,7 @@ novoJogo();
 
 const btnComecar = document.querySelector(".btnComecar");
 btnComecar.addEventListener("click", novoJogo);
+
+document.getElementById("btnSair").addEventListener("click", () => {
+  window.location.href = "sistemaLoginCadastro/logout.php";
+});
