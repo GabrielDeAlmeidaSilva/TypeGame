@@ -81,7 +81,8 @@ else {
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../style.css">
-	<link rel="stylesheet" href="./style_criar_liga.css">
+	    <link rel="stylesheet" href="./style_criar_liga.css">
+        <link rel="icon" type="image/png" href="../assets/patoIconCor.png">
 	<title>Criar Liga</title>
     </head>
     <body>
