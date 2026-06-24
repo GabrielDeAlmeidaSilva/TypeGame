@@ -1,5 +1,5 @@
 <?php
-    require "./bd/credenciais.php";
+    require "../bd/credenciais.php";
 
     if(session_status() === PHP_SESSION_NONE){
 	session_start();
@@ -24,15 +24,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width", initial-scale=1">
     <title> TypeGame </title>
-    <link rel="icon" type="image/x-icon" href="assets/patoIconCor.png">
-    <link rel="stylesheet" href="styleLigas.css">    
+    <link rel="icon" type="image/x-icon" href="../assets/patoIconCor.png">
+    <link rel="stylesheet" href="./styleLigas.css">    
     <script src="./scriptLiga.js" defer></script>
 </head>
 <body>
     <div id="ahh">
         <div id="header">
-            <a href="index.php">
-	        <img id="pato" src="./assets/patoIcon.png" alt="Retornar ao jogo">
+            <a href="../index.php">
+	        <img id="pato" src="../assets/patoIcon.png" alt="Retornar ao jogo">
 	    </a>
 	    <div id="titulo">
 		<h1> Ligas </h1>
@@ -41,9 +41,9 @@
 		<form class="formulario">
 		    <input type="text" id="nomeLiga" name="nomeLiga" placeholder="Nome">
 	            <input type="text" id="codLiga" name="codLiga" placeholder="Código">
-		    <button id="entraLiga" type="button"> Entrar </button>
+		    <button id="entraLiga" type="submit"> Entrar </button>
 		</form>
-		<p id="alerta" style="visibility: hidden"></p>
+		<p id="alerta"></p>
 	    </div>
    	    <button id="criaLiga" type="button"> + </button>
 	</div>
@@ -76,7 +76,7 @@
 		    }    
 		?>
 		<a href="rankGlobal.php">
-		    <img id="globo" src="./assets/globo.png" alt="Rank global">
+		    <img id="globo" src="../assets/globo.png" alt="Rank global">
 	        </a>
 	    </div>
 	<div id="semanal" class="leaderboard">

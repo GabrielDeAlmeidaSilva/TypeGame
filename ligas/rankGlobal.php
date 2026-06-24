@@ -1,5 +1,5 @@
 <?php
-    require "./bd/credenciais.php";
+    require "../bd/credenciais.php";
 
     if(session_status() === PHP_SESSION_NONE){
 	session_start();
@@ -22,15 +22,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width", initial-scale=1">
     <title> TypeGame </title>
-    <link rel="icon" type="image/x-icon" href="assets/patoIconCor.png">
-    <link rel="stylesheet" href="styleLigas.css">    
+    <link rel="icon" type="image/x-icon" href="../assets/patoIconCor.png">
+    <link rel="stylesheet" href="./styleLigas.css">    
     <script src="./scriptLiga.js" defer></script>
 </head>
 <body>
     <div id="ahh">
         <div id="header">
-            <a href="index.php">
-	        <img id="pato" src="./assets/patoIcon.png" alt="Retornar ao jogo">
+            <a href="../index.php">
+	        <img id="pato" src="../assets/patoIcon.png" alt="Retornar ao jogo">
 	    </a>
 	    <div id="titulo">
 		<h1> Rank Global </h1>

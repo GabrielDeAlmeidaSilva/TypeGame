@@ -39,12 +39,12 @@
 }
 
 #pato {
-    height: 50px;
+    height: 60px;
     width: auto;
 }
 
 #titulo h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
@@ -79,6 +79,13 @@
     font-size: 1rem;
 }
 
+#alerta {
+    font-size: 1rem;
+    margin-top: 5px;
+    height: 10px;
+    color: #ff0000;
+}
+
 #criaLiga {
     background-color: #cccccc;
     padding-bottom: 5px;
@@ -96,7 +103,7 @@
 /* --- Título da Liga Atual --- */
 #ligaAtual h2 {
     font-size: 3rem;
-    padding: 30px 0 10px 100px; /* Alinhado com o início dos cards */
+    padding: 30px 0 10px 125px; /* Alinhado com o início dos cards */
     font-weight: bold;
 }
 
