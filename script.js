@@ -10,7 +10,7 @@ const numeroPalavras = palavras.length;
 let timer = null;
 let gameStart = null;
 
-const gametime = 30 * 1000;
+const gametime = 15 * 1000;
 
 //essa funcao tem a tarefa de retornar um elemento da array de palavras
 function palavraRandom() {
@@ -224,7 +224,7 @@ divJogo.addEventListener("keydown", (evento) => {
 });
 novoJogo();
 
-const btnComecar = document.querySelector(".btnComecar");
+const btnComecar = document.querySelector("#btnResetar");
 btnComecar.addEventListener("click", novoJogo);
 
 document.getElementById("btnSair").addEventListener("click", () => {
