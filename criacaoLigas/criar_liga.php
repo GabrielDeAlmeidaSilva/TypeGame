@@ -87,7 +87,9 @@ else {
     </head>
     <body>
         <header class="cabecalho cabecalhoLiga">
+            <a href="../index.php">
              <img class="iconImagem logoLiga" src="../assets/patoIcon.png" alt="Logo do TypeGame">
+            </a>
              <h1>TypeGame</h1>
         </header>
             <main>
