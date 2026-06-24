@@ -94,7 +94,6 @@ else {
              <h1>TypeGame</h1>
         </header>
             <main>
-                <h2 class="tituloLiga">Criação de nova Liga</h2>
                 <?php 
                 //exibe a mensagem de erro caso as senha não coincidam.
                 if ($mensagem != "") { ?>
