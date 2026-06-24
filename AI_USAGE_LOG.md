@@ -3,7 +3,7 @@
 ## Registro de Interações
 
 ### Interação 1
-
+- **Discente: ** Eduardo G Lopes
 - **Data:** 23/06/2026
 - **Etapa do Projeto:** 1 - Front das ligas
 - **Ferramenta de IA Utilizada:** Gemini
@@ -19,7 +19,7 @@
   No protótipo não consta a posição de cada jogador (1, 2, ...) e a IA fez como tal, terei que tornar visível o marcador de lista ordenada ou usar JS. As cores e a fonte não são as mesmas das que utilizamos no projeto, mas ela apenas seguiu o protótipo (que estava com as cores erradas) e sugeriu a fonte 'Courier New' por ser uma monospace semelhante a do MonkeyType.
 
 - **Referência no Código:**
-  Praticamente todo o CSS do sistema de ligas e do rank global
+  Praticamente todo o CSS da   d de ligas e do rank global
 ---
 
 ### Interação 2

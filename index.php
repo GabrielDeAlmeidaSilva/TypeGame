@@ -61,12 +61,14 @@ $atualPontuacao = $linha['pontuacao'] ?? 0;
           <h1>TypeGame</h1>
           <nav class="divNavegacao">
             <ul>
-              <li>
-                <img
-                  class="iconNav"
-                  src="./assets/rankIcon.png"
-                  alt="rankIcon"
-                />
+	      <li>
+		<a href="./ligas/ligas.php">
+                  <img
+                    class="iconNav"
+                    src="./assets/rankIcon.png"
+                    alt="rankIcon"
+                  />
+		</a>
               </li>
             </ul>
           </nav>

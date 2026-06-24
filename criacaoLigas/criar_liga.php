@@ -1,6 +1,6 @@
 <?php
 //pega as credenciais do banco de dados
-require "./bd/credenciais.php";
+require "../bd/credenciais.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -8,7 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 //impede acesso sem login
 if (!isset($_SESSION["idUsuario"])) {
-    header("Location: login.php");
+    header("Location: ../sistemaLoginCadastro/login.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    header("Location: login.php");
+    header("Location: ../sistemaLoginCadastro/login.php");
     exit;
 }
 
@@ -80,12 +80,13 @@ else {
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="criacaoLigas/style_criar_liga.css">        <title>Criar Liga</title>
+        <link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="./style_criar_liga.css">
+	<title>Criar Liga</title>
     </head>
     <body>
         <header class="cabecalho cabecalhoLiga">
-             <img class="iconImagem logoLiga" src="assets/patoIcon.png" alt="Logo do TypeGame">
+             <img class="iconImagem logoLiga" src="../assets/patoIcon.png" alt="Logo do TypeGame">
              <h1>TypeGame</h1>
         </header>
             <main>
@@ -110,7 +111,7 @@ else {
 
                     <div class="botoesLiga">
                         <button type="submit">Criar</button>
-                        <button type="button" onclick="window.location.href='ligas.php'">Voltar</button>
+                        <button type="button" onclick="window.location.href='../ligas/ligas.php'">Voltar</button>
                     </div>
                 </form>
                 </div>
