@@ -1,12 +1,12 @@
 <?php
-
+//pega as credenciais do banco de dados
 require "./bd/credenciais.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 
 }
-
+//impede acesso sem login
 if (!isset($_SESSION["idUsuario"])) {
     header("Location: login.php");
     exit;
@@ -16,10 +16,11 @@ $idUsuario = $_SESSION["idUsuario"];
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
+// Verifica se a conexão com o banco falhou
 if (!$conn) {
     die("Erro ao conectar ao banco: " . mysqli_connect_error());
 }
-
+// Confirma se o usuário da sessão ainda existe no banco
 $stmt = $conn->prepare("SELECT idUsuario FROM Usuario WHERE idUsuario = ?");
 $stmt->bind_param("i", $idUsuario);
 $stmt->execute();
@@ -34,13 +35,15 @@ $stmt->close();
 
 $mensagem = "";
 
+// Processa formulário apenas quando enviado via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // Remove espaços extras do nome da liga
     $nomeLiga = trim($_POST["nomeLiga"]);
     $senhaLiga = $_POST["senhaLiga"];
     $confirmarSenha = $_POST["confirmarSenha"];
     
-
+    // Validação: senhas precisam ser iguais
     if (empty($nomeLiga)) {
         $mensagem = "Digite um nome para sua Liga.";
     }
@@ -55,12 +58,14 @@ else {
         VALUES (?, ?, ?)
     ");
 
+    // Gera hash seguro da senha da liga (não salva senha pura)
     $senhaHash = password_hash($senhaLiga, PASSWORD_DEFAULT);
 
     $stmt->bind_param("ssi", $nomeLiga, $senhaHash, $idUsuario);
 
     if ($stmt->execute()) {
         $mensagem = "Liga criada com sucesso!";
+        // Redireciona após sucesso na criação
         header("Location: ligas.php");
         exit;
     } else {
