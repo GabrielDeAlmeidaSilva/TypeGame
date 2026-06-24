@@ -4,6 +4,12 @@ require "./bd/credenciais.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+
+}
+
+if (!isset($_SESSION["idUsuario"])) {
+    header("Location: login.php");
+    exit;
 }
 
 $idUsuario = $_SESSION["idUsuario"];
@@ -13,6 +19,18 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Erro ao conectar ao banco: " . mysqli_connect_error());
 }
+
+$stmt = $conn->prepare("SELECT idUsuario FROM Usuario WHERE idUsuario = ?");
+$stmt->bind_param("i", $idUsuario);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    header("Location: login.php");
+    exit;
+}
+
+$stmt->close();
 
 $mensagem = "";
 
@@ -43,7 +61,7 @@ else {
 
     if ($stmt->execute()) {
         $mensagem = "Liga criada com sucesso!";
-        header("Location: index.php");
+        header("Location: ligas.php");
         exit;
     } else {
         $mensagem = "Erro ao criar liga.";
@@ -58,7 +76,7 @@ else {
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
-        <title>Criar Liga</title>
+        <link rel="stylesheet" href="criacaoLigas/style_criar_liga.css">        <title>Criar Liga</title>
     </head>
     <body>
         <header class="cabecalho cabecalhoLiga">
@@ -87,7 +105,7 @@ else {
 
                     <div class="botoesLiga">
                         <button type="submit">Criar</button>
-                        <button type="button">Voltar</button>
+                        <button type="button" onclick="window.location.href='ligas.php'">Voltar</button>
                     </div>
                 </form>
                 </div>
