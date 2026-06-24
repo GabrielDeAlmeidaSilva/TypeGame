@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if (isset($_SESSION["idUsuario"])) {
     $idUser = $_SESSION["idUsuario"];
 } else {
-    header("Location: SistemaLoginCadastro/login.php");
+    header("Location: sistemaLoginCadastro/login.php");
     exit();
 }
 
