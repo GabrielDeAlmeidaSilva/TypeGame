@@ -2,16 +2,18 @@
 require "./bd/credenciais.php";
 
 
-if (session_status() === PHP_SESSION_NONE){
-  session_start();
-  $_SESSION["idUsuario"] = 1;
-    }
- if (isset($_SESSION["idUsuario"])) {
-	$idUser = $_SESSION["idUsuario"];
-    } else {
-    header("Location: login.php");
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_SESSION["idUsuario"])) {
+    $idUser = $_SESSION["idUsuario"];
+} else {
+    header("Location: /SistemaLoginCadastro/login.php");
     exit();
 }
+
+
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(!$conn){
 	die("Erro ao tentar estabelecer conexao com o BD: " . mysqli_connect_error());
