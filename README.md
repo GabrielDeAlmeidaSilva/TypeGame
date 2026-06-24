@@ -7,10 +7,12 @@
 ---
 ## Especificação do trabalho
 O trabalho prático envolve a criação de uma aplicação WEB completa. Ou seja, que inclua a implementação de front-end, back-end e que possua integração com um banco de dados, de um jogo de digitação. O objetivo principal do jogo é testar a velocidade e a precisão do usuário ao digitar palavras na tela. O sistema possui as seguintes funcionalidades:
-1. Sistema de Login/Cadastro de Usuarios.
-2. Jogo de digitação.
-3. Sistema de Histórico de Pontuação.
-4. Sistema de partição de Ligas personalizadas.
+
+## Funcionalidades
+1. **Sistema de Login/Cadastro:** Autenticação de usuários.
+2. **Jogo de Digitação:** Mecânica principal de teste de velocidade e precisão.
+3. **Histórico de Pontuação:** Registro das melhores pontuações e do último jogo.
+4. **Sistema de Ligas Personalizadas:** Criação e participação em ligas/grupos com ranking geral e semanal.
 
 ## Tecnologias Utilizadas
 * **Front-end:** HTML5, CSS3, JavaScript
