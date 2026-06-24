@@ -6,7 +6,10 @@ const palavras =
     " ",
   );
 const numeroPalavras = palavras.length;
-window.timer = null;
+
+let timer = null;
+let gameStart = null;
+
 const gametime = 30 * 1000;
 
 //funcoes que mundam a classe da letra durante a digitacao
@@ -49,8 +52,8 @@ function montarTexto() {
 }
 
 function novoJogo() {
-  clearInterval(window.timer);
-  window.timer = null;
+  clearInterval(timer);
+  timer = null;
 
   document.querySelector(".info").innerHTML = gametime / 1000;
 
@@ -83,7 +86,7 @@ function getPontuacao() {
 }
 
 function fimJogo() {
-  clearInterval(window.timer);
+  clearInterval(timer);
   addClass(document.querySelector(".jogo"), "fim");
   let pontuacaoFinal = getPontuacao();
 
@@ -128,17 +131,15 @@ divJogo.addEventListener("keydown", (evento) => {
   console.log({ key, expectativa });
 
   //comeca quando digitar a primeira letra
-  if (!window.timer && (ehLetra || ehSpaco)) {
+  if (!timer && (ehLetra || ehSpaco)) {
     const infoElement = document.querySelector(".info"); // Cache do elemento DOM
     const tempoTotalSegundos = gametime / 1000;
 
-    window.gameStart = Date.now(); // Define o início
+    gameStart = Date.now(); // Define o início
 
     //executa esta funcao a cada intervalo de tempo. 1segundo
-    window.timer = setInterval(() => {
-      const segundosPassados = Math.floor(
-        (Date.now() - window.gameStart) / 1000,
-      );
+    timer = setInterval(() => {
+      const segundosPassados = Math.floor((Date.now() - gameStart) / 1000);
       const tempoRestante = Math.max(0, tempoTotalSegundos - segundosPassados);
 
       infoElement.innerHTML = tempoRestante;
