@@ -94,13 +94,11 @@ function fimJogo() {
     method: "POST",
     body: dados,
   })
-    .then((resposta) => resposta.text())
     .then(() => {
-      console.log("Resposta do servidor:");
       window.location.reload();
     })
-    .catch(() => {
-      console.error("Erro de requisição:");
+    .catch((erro) => {
+      console.error("Erro ao salvar", erro);
     });
 }
 
@@ -164,6 +162,7 @@ divJogo.addEventListener("keydown", (evento) => {
       } else if (!palavraAtual.nextSibling) {
         //terminao o jogo se nao tiver mais palavras
         fimJogo();
+        return;
       }
     }
   }
