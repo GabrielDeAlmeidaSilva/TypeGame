@@ -3,7 +3,6 @@ require "./bd/credenciais.php";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    $_SESSION["idUsuario"] = 1;
 }
 
 if (isset($_SESSION["idUsuario"])) {
