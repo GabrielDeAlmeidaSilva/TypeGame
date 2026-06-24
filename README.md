@@ -22,7 +22,11 @@ O trabalho prático envolve a criação de uma aplicação WEB completa. Ou seja
 ## Demonstração do Projeto
 
 ### Gameplay:
-Colocar video Gameplay
+
+
+https://github.com/user-attachments/assets/9548fef4-7704-48a5-b06e-fb8ce36e3682
+
+
 ### Sistema de Login/Cadastro:
 Colocar video sistema de login
 ### Sistema de Ligas: 
