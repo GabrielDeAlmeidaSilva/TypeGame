@@ -87,6 +87,7 @@ else {
     </head>
     <body>
         <header class="cabecalho cabecalhoLiga">
+            //linka a logo do jogo para ir para a tela de game
             <a href="../index.php">
              <img class="iconImagem logoLiga" src="../assets/patoIcon.png" alt="Logo do TypeGame">
             </a>
