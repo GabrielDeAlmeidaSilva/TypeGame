@@ -37,9 +37,6 @@ https://github.com/user-attachments/assets/19c2fbd5-a367-4a5c-b3b6-90d0a3259a16
 ### Sistema de Ligas: 
 
 
-https://github.com/user-attachments/assets/d3ad8fda-a76d-45c9-9082-24cdd6a122cc
-
-
 
 ---
 ### Configuração do Banco de Dados
