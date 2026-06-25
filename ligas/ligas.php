@@ -20,6 +20,10 @@
 	die("Erro ao tentar estabelecer conexao com o BD: " . mysqli_connect_error());
     }
 
+    if(!mysqli_set_charset($conn, "utf8mb4")){
+	die("Erro ao carregar characteres de utf8mb4: " . mysqli_error($conn));
+    }
+
     if($_SERVER["REQUEST_METHOD"] === 'POST'){
 	$nomeLiga = $_POST["nomeLiga"] ?? "";
     	$codLiga = $_POST["codLiga"] ?? "";
@@ -58,13 +62,14 @@
 	    </div>
 	    <div id="entrar">
 		<form class="formulario" action="./ligas.php" method="POST">
-		    <input type="text" id="nomeLiga" name="nomeLiga" placeholder="Nome">
-	            <input type="text" id="codLiga" name="codLiga" placeholder="Código">
+		    <input type="text" id="nomeLiga" name="nomeLiga" placeholder="Nome" required>
+	            <input type="text" id="codLiga" name="codLiga" placeholder="Código" required>
 		    <button id="entraLiga" type="submit"> Entrar </button>
 		</form>
 		<p id="alerta"></p>
 	    </div>
    	    <button id="criaLiga" type="button"> + </button>
+	    <a href="./historico.php"><img src="../assets/history.png" href="https://www.flaticon.com/authors/tempo-doloe" style="width: 50px"></a>
 	</div>
         <div id="ligaAtual">
 	    <?php		

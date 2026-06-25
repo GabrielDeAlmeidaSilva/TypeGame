@@ -202,3 +202,35 @@
 .leaderboard .pont {
     font-weight: bold;
 }
+
+#tudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--azulEsc); 
+    color: #ffffff;
+    min-height: 100vh;
+}
+#header {
+    width: 100vw;
+}
+
+#partidas {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+    align-: center;
+    background-color: #dbdbdb;
+    gap: 10px; 
+}
+
+.partida {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f7da83; 
+    color: #000000;
+    padding: 10px;
+} 
