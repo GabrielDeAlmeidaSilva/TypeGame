@@ -30,7 +30,8 @@ https://github.com/user-attachments/assets/9548fef4-7704-48a5-b06e-fb8ce36e3682
 ### Sistema de Login/Cadastro:
 
 
-Colocar video sistema de login
+https://github.com/user-attachments/assets/19c2fbd5-a367-4a5c-b3b6-90d0a3259a16
+
 
 
 ### Sistema de Ligas: 
