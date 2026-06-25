@@ -48,9 +48,19 @@ form.addEventListener("submit", (e) => {
     //validar se as senhas não sao iguais
 
     if(c_password.value.trim() !== passsword.value.trim()){
-        span_c_password.textContent = "Senha não confere!"
+        span_c_password.textContent = "Senha não confere! (validação front-end)"
         e.preventDefault()
     } else if(passsword.value !== ""){
         limpa_span(span_c_password)
     }
+})
+
+//vazer o quack
+
+document.querySelector("img").addEventListener("click", (e) => {
+    document.querySelector("span").textContent = "Quack!"
+
+    setTimeout(() => {
+        document.querySelector("span").textContent = ""
+    }, 1000)
 })

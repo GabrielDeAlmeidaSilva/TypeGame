@@ -2,5 +2,5 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = '';
+$password = '5541';
 $dbname = 'typegame';

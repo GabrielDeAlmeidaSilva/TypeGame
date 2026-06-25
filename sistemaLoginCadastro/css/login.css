@@ -2,69 +2,152 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
 body {
+    background-color: #254363;
+}
+
+div.container{
     height: 100vh;
-}
-
-.main {
-    display: flex;
-    height: calc(100vh - 80px);
-    /*centralizar*/
-    justify-content: center;
-    align-items: center;
-
-    background-color: #254360;
-
-    flex-direction: column;
-}
-
-form 
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    width: 300px;
-}
-
-input {
-    height: 50px;
-    border-radius: 12px;
-    border: none;
-    padding: 10px;
-}
-
-label {
-    margin: 8px;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-div {
     width: 100%;
-    margin: 0 auto;
-}
-
-div button {
-    width: 39%;
-}
-
-button {
-    margin-top: 20px;
-    width: 40%;
-    margin-left: 20px;
-    height: 30px;
-    border-radius: 12px;
-    border: none;
-    background-color: #4FA997;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 div.navbar {
-    background-color: #F5D622;
-    height: 80px;
+    background-color: #F3DB11;
+    height: calc(100vh - 85vh);
     width: 100%;
+    display: flex;
+}
+
+div.navbar img {
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+    transition: ease 0.3s;
+}
+
+div.navbar h1 {
+    margin-left: auto;
+    margin-right: 100px;
+    margin-top: 25px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh;
+    width: auto;
+}
+
+form  label {
+    width: 50%;
+    
+}
+
+input {
+    height: 40px;
+    width: 50%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 14px;
+    border: none
+}
+
+input:hover {
+    background-color: #e0ddc4;
+}
+
+form h2 {
+    margin-bottom: 20px;
+}
+
+form > * {
+    color: white;
+}
+
+div.but {
+    width: 50%;
+}
+
+div.navbar img:hover {
+    transform: scaleX(0.7);
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+form button {
+    width: 48%;
+    height: 30px;
+    background-color: #4FA696;
+    border: none;
+    cursor: pointer;
+    border-radius: 17px;
+    transition: all ease 0.3s;
+}
+
+form button:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    background-color: #6bb8aa;
+}
+
+input {
+    margin: 5px;
+    color: #000;
+}
+
+div.navbar img {
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+img:hover{
+    animation: espremer 0.3s;
+}
+
+span {
+    margin-top: 10px;
+}
+
+
+@media (min-width: 1024px){
+
+    div.navbar h1 {
+        margin: 0;
+        margin: 27px;
+    }
+
+    form input {
+        height: 40px;
+        width: 20%;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        padding: 14px;
+        border: none
+    }
+
+    form label {
+        width: 20%;
+    }
+
+    div.but {
+        width: 20%;
+    }
+
+    form button {
+        width: 48%;
+        height: 30px;
+        background-color: #4FA696;
+        border: none;
+        cursor: pointer;
+        border-radius: 17px;
+    }
+
 }

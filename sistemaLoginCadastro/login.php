@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-// Se já estiver logado, redireciona
-if (isset($_SESSION["idUsuario"])) {
-    header("Location: dashboard.php");
+// Se já estiver logado, sai
+if (isset($_SESSION["usuario_id"])) {
+    header("Location: logout.php");
     exit;
 }
 
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 mysqli_stmt_close($stmt);
                 mysqli_close($conn);
 
-                header("Location: dashboard.php");
+                header("Location: ../index.php");
                 exit;
             }
         }
@@ -53,28 +53,30 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-        <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/png" href="../assets/patoIconCor.png">
 </head>
 <body>
     <div class="navbar">
-        <img src="" alt="">
+        <img src="../assets/patoIcon.png" alt="Pato">
+        <span></span>
+        <h1>Login</h1>
     </div>
     <div class="main">
-        <h1>Login</h1>
         <form action="" method="post">
             <label for="name">Nome:</label> <span class="name-span"></span>
             <input type="text" name="name" id="name" placeholder="Insira sua nome">
 
-            <label for="password">Senha:</label> <span class="password-psan"></span>
+            <label for="password">Senha:</label> <span class="password-span"></span>
             <input type="password" name="password" id="password" placeholder="Insira a sua senha">
 
-            <div>
+            <div class="but">
                 <button type="submit">Enviar</button>
                 <button type="button" onclick="window.location.href='cadastro.php'">Cadastrar</button>
             </div>
             <?=$erro?>
         </form>
         <script src="js/login.js"></script>
-    </div class="main">
+    </div>
 </body>
 </html>
