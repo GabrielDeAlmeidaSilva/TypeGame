@@ -66,15 +66,22 @@ function novoJogo() {
 }
 
 function getPontuacao() {
-  //seleciona todas as palavras
   const palavras = document.querySelectorAll(".palavra");
+  let totalPalavrasCertas = 0;
 
-  //seleciona todas as palavras que possuem todas as suas letras como certo
-  const palavrasCertas = [...palavras].filter((palavra) =>
-    [...palavra.children].every((letra) => letra.classList.contains("certo")),
-  );
+  for (let palavra of palavras) {
+    // Conta o total de letras da palavra e o total de letras que estão verdes ("certo")
+    const totalLetras = palavra.querySelectorAll(".letra").length;
+    const letrasCertas = palavra.querySelectorAll(".certo").length;
 
-  return (palavrasCertas.length / gametime) * 60000;
+    // Se a quantidade bater (e a palavra não for vazia), o jogador acertou 100% da palavra
+    if (totalLetras > 0 && totalLetras === letrasCertas) {
+      totalPalavrasCertas++;
+    }
+  }
+
+  // Mantém a sua fórmula de PPM (Palavras Por Minuto)
+  return (totalPalavrasCertas / gametime) * 60000;
 }
 
 function fimJogo() {
