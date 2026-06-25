@@ -66,7 +66,7 @@ else {
     if ($stmt->execute()) {
         $mensagem = "Liga criada com sucesso!";
         // Redireciona após sucesso na criação
-        header("Location: ligas.php");
+        header("Location: ../ligas/ligas.php");
         exit;
     } else {
         $mensagem = "Erro ao criar liga.";
@@ -81,16 +81,19 @@ else {
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../style.css">
-	<link rel="stylesheet" href="./style_criar_liga.css">
+	    <link rel="stylesheet" href="./style_criar_liga.css">
+        <link rel="icon" type="image/png" href="../assets/patoIconCor.png">
 	<title>Criar Liga</title>
     </head>
     <body>
         <header class="cabecalho cabecalhoLiga">
+            //linka a logo do jogo para ir para a tela de game
+            <a href="../index.php">
              <img class="iconImagem logoLiga" src="../assets/patoIcon.png" alt="Logo do TypeGame">
+            </a>
              <h1>TypeGame</h1>
         </header>
             <main>
-                <h2 class="tituloLiga">Criação de nova Liga</h2>
                 <?php 
                 //exibe a mensagem de erro caso as senha não coincidam.
                 if ($mensagem != "") { ?>
