@@ -1,3 +1,5 @@
+
+
 # TypeGame: Jogo Digitação
 ## Trabalho Final DS122 - Desenvolvimento Web 1
 * Cezar Anthonio
@@ -33,9 +35,10 @@ https://github.com/user-attachments/assets/9548fef4-7704-48a5-b06e-fb8ce36e3682
 https://github.com/user-attachments/assets/19c2fbd5-a367-4a5c-b3b6-90d0a3259a16
 
 
-
 ### Sistema de Ligas: 
 
+
+https://github.com/user-attachments/assets/42a146f0-3791-4dbf-9a46-bb5354533791
 
 
 ---
