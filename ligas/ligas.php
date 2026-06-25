@@ -3,18 +3,35 @@
 
     if(session_status() === PHP_SESSION_NONE){
 	session_start();
-	$_SESSION["idUsuario"] = 1;
     }
 
-    if (isset($_SESSION["idUsuario"])) {
+    if(isset($_SESSION["idUsuario"])){
 	$idUser = $_SESSION["idUsuario"];
     }
+    else{
+	header("Location: ../sistemaCadastroLogin/login.php");
+    }
+
 
     $idLigaAtual = isset($_GET['idLiga']) ? $_GET['idLiga'] : '';
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     if(!$conn){
 	die("Erro ao tentar estabelecer conexao com o BD: " . mysqli_connect_error());
+    }
+
+    if($_SERVER["REQUEST_METHOD"] === 'POST'){
+	$nomeLiga = $_POST["nomeLiga"] ?? "";
+    	$codLiga = password_hash($_POST["codLiga"] ?? "", PASSWORD_DEFAULT);
+
+        $sql = "SELECT idLiga, nome, codigo FROM Liga WHERE nome = '" . $nomeLiga . "' AND codigo = '" . $codLiga . "' LIMIT 1;";
+
+    	$result = mysqli_query($conn, $sql);
+	if(mysqli_num_rows($result) > 0){
+	    $liga = mysqli_fetch_assoc($result);
+	    $entrarLiga = "INSERT INTO UsuarioLiga (fk_idUsuario, fk_idLiga) VALUES (" . $liga['idLiga'] . ", " . $idUser . ");";
+	    if(!mysqli_query($conn, $entrarLiga)){ die("Erro ao entrar na liga" . mysqli_error($conn)); }
+	}
     }
 
 ?>
@@ -38,7 +55,7 @@
 		<h1> Ligas </h1>
 	    </div>
 	    <div id="entrar">
-		<form class="formulario">
+		<form class="formulario" action="./ligas.php" method="POST">
 		    <input type="text" id="nomeLiga" name="nomeLiga" placeholder="Nome">
 	            <input type="text" id="codLiga" name="codLiga" placeholder="Código">
 		    <button id="entraLiga" type="submit"> Entrar </button>
