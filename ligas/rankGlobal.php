@@ -3,11 +3,13 @@
 
     if(session_status() === PHP_SESSION_NONE){
 	session_start();
-	$_SESSION["idUsuario"] = 1;
     }
 
     if (isset($_SESSION["idUsuario"])) {
 	$idUser = $_SESSION["idUsuario"];
+    }
+    else{
+	header("Location: ../sistemaCadastroLogin/login.php");
     }
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);

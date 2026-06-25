@@ -13,9 +13,11 @@ if (!isset($_SESSION["usuario_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/patoIconCor.png">
     <title>Document</title>
 </head>
 <body>
+    <a href="../index.php"><img src="../assets/patoIcon.png" alt="Retornar ao game"></a>
     <h1>Painel do usuario</h1>
     <p><?=htmlspecialchars($_SESSION["usuario_nome"])?></p>
     <a href="logout.php">sair</a>    
