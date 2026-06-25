@@ -28,9 +28,17 @@ https://github.com/user-attachments/assets/9548fef4-7704-48a5-b06e-fb8ce36e3682
 
 
 ### Sistema de Login/Cadastro:
+
+
 Colocar video sistema de login
+
+
 ### Sistema de Ligas: 
-Colocar video sistema de Liga
+
+
+https://github.com/user-attachments/assets/d3ad8fda-a76d-45c9-9082-24cdd6a122cc
+
+
 
 ---
 ### Configuração do Banco de Dados
