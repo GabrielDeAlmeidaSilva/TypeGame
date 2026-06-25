@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_SESSION["usuario_id"])) {
+if (!isset($_SESSION["idUsuario"])) {
     header("Location: login.php");
     exit;
 }
@@ -19,7 +19,7 @@ if (!isset($_SESSION["usuario_id"])) {
 <body>
     <a href="../index.php"><img src="../assets/patoIcon.png" alt="Retornar ao game"></a>
     <h1>Painel do usuario</h1>
-    <p><?=htmlspecialchars($_SESSION["usuario_nome"])?></p>
+    <p><?=htmlspecialchars($_SESSION["nome"])?></p>
     <a href="logout.php">sair</a>    
 </body>
 </html>

@@ -2,7 +2,7 @@
 session_start();
 
 // Se já estiver logado, redireciona
-if (isset($_SESSION["usuario_id"])) {
+if (isset($_SESSION["idUsuario"])) {
     header("Location: dashboard.php");
     exit;
 }
@@ -29,8 +29,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             if(password_verify($senha, $usuario["senha"])){
                 //login sucedido
                 session_regenerate_id(true);
-                $_SESSION["usuario_id"] = $usuario["idUsuario"];
-                $_SESSION["usuario_nome"] = $usuario["nome"];
+                $_SESSION["idUsuario"] = $usuario["idUsuario"];
+                $_SESSION["nome"] = $usuario["nome"];
                 
                 mysqli_stmt_close($stmt);
                 mysqli_close($conn);
