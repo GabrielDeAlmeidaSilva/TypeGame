@@ -22,15 +22,17 @@
 
     if($_SERVER["REQUEST_METHOD"] === 'POST'){
 	$nomeLiga = $_POST["nomeLiga"] ?? "";
-    	$codLiga = password_hash($_POST["codLiga"] ?? "", PASSWORD_DEFAULT);
+    	$codLiga = $_POST["codLiga"] ?? "";
 
-        $sql = "SELECT idLiga, nome, codigo FROM Liga WHERE nome = '" . $nomeLiga . "' AND codigo = '" . $codLiga . "' LIMIT 1;";
+        $sql = "SELECT idLiga, nome, codigo FROM Liga WHERE nome = '" . $nomeLiga . "' LIMIT 1;";
 
     	$result = mysqli_query($conn, $sql);
 	if(mysqli_num_rows($result) > 0){
 	    $liga = mysqli_fetch_assoc($result);
-	    $entrarLiga = "INSERT INTO UsuarioLiga (fk_idUsuario, fk_idLiga) VALUES (" . $liga['idLiga'] . ", " . $idUser . ");";
-	    if(!mysqli_query($conn, $entrarLiga)){ die("Erro ao entrar na liga" . mysqli_error($conn)); }
+	    if(password_verify($codLiga, $liga['codigo'])){
+	    	$entrarLiga = "INSERT INTO UsuarioLiga (fk_idUsuario, fk_idLiga) VALUES (" . $idUser . ", " . $liga['idLiga'] . ");";
+	    	if(!mysqli_query($conn, $entrarLiga)){ die("Erro ao entrar na liga" . mysqli_error($conn)); }
+	    }
 	}
     }
 
