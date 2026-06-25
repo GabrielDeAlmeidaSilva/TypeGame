@@ -27,3 +27,12 @@ document.querySelector("form").addEventListener("submit", (e) => {
         spanpassword.innerHTML = ""
     }
 });
+
+
+document.querySelector("img").addEventListener("click", (e) => {
+    document.querySelector("span").textContent = "Quack!"
+
+    setTimeout(() => {
+        document.querySelector("span").textContent = ""
+    }, 1000)
+})

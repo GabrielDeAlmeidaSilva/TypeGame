@@ -9,7 +9,7 @@
 	$idUser = $_SESSION["idUsuario"];
     }
     else{
-	header("Location: ../sistemaCadastroLogin/login.php");
+	header("Location: ../sistemaLoginCadastro/login.php");
     }
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);

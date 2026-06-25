@@ -24,7 +24,7 @@
         $senha_diferente = $senha != $confirmacao_senha;
 
         if($nome_vazio || $senha_vazia || $c_senha_vazia || $senha_diferente){
-            $mensagem = "Preencha corretamente os campos!";
+            $mensagem = "Preencha corretamente os campos! (Validaçaão Backend)";
         } else {
             $mensagem = "Cadastro feito com sucesso!";
             $pass = TRUE;
@@ -82,14 +82,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crie sua conta</title>
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="icon" type="image/png" href="../assets/patoIconCor.png">
 </head>
 <body>
     <div class="container">
         <div class="navbar">
-            <img src="img.png" alt="Pato">
+            <img src="../assets/patoIcon.png" alt="Pato">
+            <span></span>
+            <h1>typegame</h1>
         </div>
-        <h1>Crie sua conta</h1>
         <form action="" method="post">
+            <h2>Crie sua conta</h2>
             <label for="nome">Nome:</label>
             <input type="text" name="name" placeholder="Insira seu nome" id="name" value="<?=htmlspecialchars($nome)?>">
             <span class="e-name"></span>
